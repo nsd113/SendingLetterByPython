@@ -3,9 +3,9 @@ The test project with Python, Selenium, and Page object pattern.  The test is lo
 
 For the Linux operating system. To run this code, type in the terminal in the current directory:
 
-'''
+```
 python3 sending_letters_mailru.py
-'''
+```
 
 I had use Python version 3.6 and modules:
 - selenium
