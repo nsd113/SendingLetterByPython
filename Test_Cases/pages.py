@@ -19,6 +19,7 @@ class MainPage(BasePage):
     """Home page action methods come here. I.e. Python.org"""
 
     def domain_select(self, login, domain):
+        # login in with the domain selection and name
         self.driver.find_element_by_xpath(MainPageLocators.email_account).send_keys(login)
         self.driver.find_element_by_xpath(MainPageLocators.domain_option).send_keys(domain)
         self.driver.find_element_by_xpath(MainPageLocators.button_enter).click()
@@ -27,6 +28,7 @@ class MainPage(BasePage):
 class PassPage(BasePage):
 
     def password_login(self, password):
+        # login in on a second page with password
         self.driver.set_page_load_timeout(10)
         self.driver.find_element_by_xpath(PassInput.password_input).send_keys(password)
         self.driver.find_element_by_xpath(PassInput.pass_button).click()
@@ -35,13 +37,14 @@ class PassPage(BasePage):
 class InboxMain(BasePage):
 
     def open_letter_blank(self):
-        # open mail form
+        # open email form
         self.driver.set_page_load_timeout(10)
         self.wait_element_loc(path=NewLetterLoc.letter_blank)
         self.driver.find_element_by_xpath(NewLetterLoc.letter_blank).click()
 
 
 class NewLetter(BasePage):
+    # type topic, email and body of letter form
 
     def fill_letter_with_content(self, address_email, subj, text):
         self.wait_element_loc(path=DestinationAddress.contact)

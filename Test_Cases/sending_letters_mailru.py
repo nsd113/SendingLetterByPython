@@ -36,15 +36,15 @@ class MailRuSendingLetter(unittest.TestCase):
         main_page = pages.MainPage(self.driver)
         main_page.domain_select(login=login, domain=domain)
 
-        # Password input on a second page
+        # password input on a second page
         password_input = pages.PassPage(self.driver)
         password_input.password_login(password=user_password)
 
-        #
+        # opens blank letter form
         blank_email_button = pages.InboxMain(self.driver)
         blank_email_button.open_letter_blank()
 
-        #
+        # writes content in letter and sends it
         email_content = pages.NewLetter(self.driver)
         email_content.fill_letter_with_content(address_email, topic, body)
 
